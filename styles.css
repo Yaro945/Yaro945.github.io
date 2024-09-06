@@ -35,12 +35,14 @@ main {
 
 img {
   display: block;
-  margin: 20px auto; /* Centers the image and adds vertical spacing */
+  margin: 0 auto; /* Centers the image horizontally */
+  max-width: 100%; /* Ensures the image is responsive */
+  height: auto; /* Maintains the aspect ratio */
 }
 
 audio {
   display: block;
-  margin: 20px auto; /* Centers the audio player and adds vertical spacing */
+  margin: 20px auto; /* Centers the audio player horizontally */
 }
 
 footer {
