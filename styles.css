@@ -30,6 +30,17 @@ nav ul li a {
 
 main {
   padding: 20px;
+  text-align: center; /* Centers text and inline elements */
+}
+
+img {
+  display: block;
+  margin: 20px auto; /* Centers the image and adds vertical spacing */
+}
+
+audio {
+  display: block;
+  margin: 20px auto; /* Centers the audio player and adds vertical spacing */
 }
 
 footer {
@@ -40,8 +51,4 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
-}
-audio {
-  display: block;
-  margin: 20px auto;
 }
