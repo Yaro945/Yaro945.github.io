@@ -4,12 +4,12 @@ body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(to right, #1a1a1a, #434343);
-  color: #f0f0f0; /* Lighter text color for better contrast */
+  color: black; /* Set default text color to black */
 }
 
 header {
   background: #111; /* Slightly lighter black */
-  color: #f0f0f0;
+  color: black; /* Set text color to black in the header */
   padding: 20px 0;
   border-bottom: 3px solid #333; /* Thicker border for header */
   position: sticky;
@@ -30,7 +30,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #f0f0f0;
+  color: black; /* Set link color to black */
   text-decoration: none;
   font-weight: bold;
 }
@@ -62,7 +62,7 @@ img {
 
 footer {
   background: #111;
-  color: #f0f0f0;
+  color: black; /* Set footer text color to black */
   text-align: center;
   padding: 15px 0;
   border-top: 3px solid #333;
