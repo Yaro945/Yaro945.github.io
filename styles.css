@@ -1,76 +1,27 @@
-/* styles.css */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to right, #1a1a1a, #434343);
-  color: black; /* Set default text color to black */
+/* Existing CSS here */
+
+/* Style for buttons */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: white; /* Button background color */
+  color: black; /* Text color */
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid black; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
-header {
-  background: #111; /* Slightly lighter black */
-  color: black; /* Set text color to black in the header */
-  padding: 20px 0;
-  border-bottom: 3px solid #333; /* Thicker border for header */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+.button:hover {
+  background-color: black; /* Background color on hover */
+  color: white; /* Text color on hover */
+  border-color: white; /* Border color on hover */
 }
 
 nav ul li {
-  margin: 0 20px;
-}
-
-nav ul li a {
-  color: black; /* Set link color to black */
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav ul li a:hover {
-  color: #ff9800; /* Highlight color on hover */
-}
-
-main {
-  padding: 20px;
-  text-align: center;
-  background: #fff; /* White background for main content */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow */
-  margin: 20px auto; /* Center container */
-  max-width: 1200px; /* Max width for better alignment */
-}
-
-.container {
-  background-color: #a5d6a7; /* Brighter, more vibrant green */
-  padding: 20px;
-  border-radius: 8px; /* Rounded corners for container */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-img {
-  border-radius: 8px;
-}
-
-footer {
-  background: #111;
-  color: black; /* Set footer text color to black */
-  text-align: center;
-  padding: 15px 0;
-  border-top: 3px solid #333;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-}
-
-.small-video {
-  border-radius: 8px;
+  display: inline;
+  margin: 0 10px; /* Adjust spacing */
 }
