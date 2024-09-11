@@ -4,12 +4,12 @@ body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(to right, #1a1a1a, #434343);
-  color: #000000; /* Lighter text color for better contrast */
+  color: #f0f0f0; /* Lighter text color for better contrast */
 }
 
 header {
   background: #111; /* Slightly lighter black */
-  color: #000000;
+  color: #f0f0f0;
   padding: 20px 0;
   border-bottom: 3px solid #333; /* Thicker border for header */
   position: sticky;
@@ -30,7 +30,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #000000;
+  color: #f0f0f0;
   text-decoration: none;
   font-weight: bold;
 }
@@ -40,11 +40,20 @@ nav ul li a:hover {
 }
 
 main {
-  padding: 40px;
+  padding: 20px;
   text-align: center;
   background: #fff; /* White background for main content */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.container {
+  background-color: #e8f5e9; /* Light green background */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners for container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 img {
@@ -53,7 +62,7 @@ img {
 
 footer {
   background: #111;
-  color: #000000;
+  color: #f0f0f0;
   text-align: center;
   padding: 15px 0;
   border-top: 3px solid #333;
