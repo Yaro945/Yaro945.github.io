@@ -2,72 +2,66 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #000000, #434343);
-  color: #333; /* Dark gray text color for contrast */
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #1a1a1a, #434343);
+  color: #f0f0f0; /* Lighter text color for better contrast */
 }
 
 header {
-  background: #000; /* Black background for the header */
-  color: white;
-  padding: 10px 0;
-  border-bottom: 2px solid #444; /* Subtle border at the bottom of the header */
+  background: #111; /* Slightly lighter black */
+  color: #f0f0f0;
+  padding: 20px 0;
+  border-bottom: 3px solid #333; /* Thicker border for header */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li a {
-  color: white;
+  color: #f0f0f0;
   text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #ff9800; /* Highlight color on hover */
 }
 
 main {
-  padding: 20px;
+  padding: 40px;
   text-align: center;
-  background: #fff; /* White background for the main content area */
-  border: 1px solid #ddd; /* Light border around the main content */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  background: #fff; /* White background for main content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow */
 }
 
 img {
-  display: block;
-  margin: 20px auto;
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #ddd; /* Light border around the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
-}
-
-audio {
-  display: block;
-  margin: 20px auto;
+  border-radius: 8px;
 }
 
 footer {
-  background: #000; /* Black background for the footer */
-  color: white;
+  background: #111;
+  color: #f0f0f0;
   text-align: center;
-  padding: 10px 0;
-  border-top: 2px solid #444; /* Subtle border at the top of the footer */
+  padding: 15px 0;
+  border-top: 3px solid #333;
   position: fixed;
   width: 100%;
   bottom: 0;
 }
+
 .small-video {
-  width: 400px;
-  height: 300px;
-  display: block;
-  margin: 20px auto;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
