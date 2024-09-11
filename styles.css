@@ -45,12 +45,12 @@ main {
   background: #fff; /* White background for main content */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow */
-  margin: 20px auto;
-  max-width: 1200px;
+  margin: 20px auto; /* Center container */
+  max-width: 1200px; /* Max width for better alignment */
 }
 
 .container {
-  background-color: #c8e6c9; /* Brighter, more vibrant green */
+  background-color: #a5d6a7; /* Brighter, more vibrant green */
   padding: 20px;
   border-radius: 8px; /* Rounded corners for container */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
