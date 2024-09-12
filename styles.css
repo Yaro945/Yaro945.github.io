@@ -1,4 +1,55 @@
-/* Existing CSS here */
+/* Ensure all elements follow the border-box model */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #f8f8f8;
+  padding: 10px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center; /* Center nav items horizontally */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center container horizontally */
+  align-items: center; /* Center container vertically */
+  text-align: center; /* Center text within container */
+}
+
+.container {
+  max-width: 800px; /* Adjust as needed */
+  padding: 20px;
+}
+
+footer {
+  background-color: #f8f8f8;
+  padding: 10px 0;
+  text-align: center; /* Center text in footer */
+}
 
 /* Style for buttons */
 .button {
@@ -21,7 +72,23 @@
   border-color: white; /* Border color on hover */
 }
 
-nav ul li {
-  display: inline;
-  margin: 0 10px; /* Adjust spacing */
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .button {
+    padding: 8px 16px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
 }
