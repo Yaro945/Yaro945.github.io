@@ -84,6 +84,18 @@ main {
   transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
+/* Rounded corners for images and videos */
+img, video {
+  border-radius: 8px; /* Rounded corners */
+  max-width: 100%; /* Ensure media fits within container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Example to provide space around media */
+img, video {
+  margin: 10px 0; /* Adjust spacing as needed */
+}
+
 footer {
   background-color: #333;
   color: #fff;
