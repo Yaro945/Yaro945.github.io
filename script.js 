@@ -1,45 +1,26 @@
-function initMap() {
-    // Create a map centered in a default location
-    const defaultLocation = { lat: -34.397, lng: 150.644 };
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 15,
-        center: defaultLocation,
-    });
+document.addEventListener('DOMContentLoaded', (event) => {
+    const map = L.map('map').setView([51.505, -0.09], 13); // Default location (London)
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
     // Try HTML5 geolocation
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                const pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                };
+                const pos = [position.coords.latitude, position.coords.longitude];
 
-                // Update the map with the user's current location
-                map.setCenter(pos);
-                new google.maps.Marker({
-                    position: pos,
-                    map: map,
-                    title: "You are here!",
-                });
+                map.setView(pos, 15);
+                L.marker(pos).addTo(map)
+                    .bindPopup('You are here!')
+                    .openPopup();
             },
             () => {
-                handleLocationError(true, map.getCenter());
+                alert("Unable to retrieve your location.");
             }
         );
     } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, map.getCenter());
+        alert("Geolocation is not supported by this browser.");
     }
-}
-
-function handleLocationError(browserHasGeolocation, pos) {
-    new google.maps.InfoWindow({
-        content: browserHasGeolocation
-            ? "Error: The Geolocation service failed."
-            : "Error: Your browser doesn't support geolocation.",
-        position: pos,
-    }).open(map);
-}
-
-window.onload = initMap;
+});
