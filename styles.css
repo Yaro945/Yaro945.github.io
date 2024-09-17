@@ -67,6 +67,14 @@ main {
   text-align: center; /* Center text within container */
 }
 
+.container {
+  max-width: 900px;
+  background: #d3d3d3; /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
 /* Style for buttons */
 .button {
   display: inline-block;
@@ -103,9 +111,15 @@ footer {
   text-align: center;
 }
 
+/* Highlight class for larger font size on the second page */
+.learn-to-code1 .highlight {
+  font-size: 1.5em; /* Adjust the size as needed */
+  font-weight: bold;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
-  .main-content {
+  .main-content, .container {
     padding: 15px;
   }
 
