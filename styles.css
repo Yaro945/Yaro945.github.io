@@ -145,3 +145,10 @@ footer {
   object-fit: cover; /* Ensures the image covers the dimensions without distortion */
   margin: 10px 0; /* Spacing around images */
 }
+/* Specific styles for images on the second page */
+.learn-to-code2 .container img {
+  width: 400px;  /* Set the width you prefer */
+  height: 300px; /* Set the height you prefer */
+  object-fit: cover; /* Ensures the image covers the dimensions without distortion */
+  margin: 10px 0; /* Spacing around images */
+}
