@@ -152,3 +152,7 @@ footer {
   object-fit: cover; /* Ensures the image covers the dimensions without distortion */
   margin: 10px 0; /* Spacing around images */
 }
+.large-text {
+  font-size: 1.5em; /* Same size as the "Screenshots" heading */
+  font-weight: bold; /* Make it bold, if needed */
+}
