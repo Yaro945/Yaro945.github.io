@@ -157,3 +157,32 @@ footer {
   font-weight: bold; /* Make it bold, if needed */
 }
 /* Specific styles for images on the second page */
+
+/* styles.css */
+body {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #4CAF50; /* Change to your desired color */
+  color: white;
+}
+
+img {
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}

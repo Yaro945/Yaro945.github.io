@@ -6,8 +6,10 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
     <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,7 +17,7 @@
             <ul>
                 <li><a href="index.html" class="button">Home</a></li>
                 <li><a href="learn-to-code1.html" class="button">Learn to Code 1</a></li>
-                <li><a href="Learn-to-code2.html" class="button">Learn to Code 2</a></li>
+                <li><a href="learn-to-code2.html" class="button">Learn to Code 2</a></li>
                 <li><a href="GetStartedWithApps.html" class="button">Keep Going With Apps</a></li>
                 <li><a href="My-Portfolio.html" class="button">Meme creator app</a></li>
             </ul>
@@ -23,19 +25,26 @@
     </header>
     
     <main>
-        <div class="main-content">
+        <div class="main-content" data-aos="fade-up">
             <h1>Welcome to My Home Page</h1>
-            <p>Welcome to my home page. You can navigate to the second page to see what I learned in Learn to Code 1.</p>
-            <img src="Yaro.jpg" alt="A description of the image">
+            <p data-aos="fade-right">Welcome to my home page. You can navigate to the second page to see what I learned in Learn to Code 1.</p>
+            <img src="Yaro.jpg" alt="A description of the image" data-aos="zoom-in">
             <audio controls>
                 <source src="YaroA.mp3" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>
-            <div id="map" style="height: 400px; width: 100%; margin-top: 20px;"></div>
+            <div id="map" style="height: 400px; width: 100%; margin-top: 20px;" data-aos="fade-up"></div>
         </div>
     </main>
+    
     <footer>
         <p>© 2024 Yaroslav Kulabukhov</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+            AOS.init();
+        });
+    </script>
 </body>
 </html>

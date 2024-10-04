@@ -23,4 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     } else {
         alert("Geolocation is not supported by this browser.");
     }
+
+    // Add AOS initialization
+    AOS.init();
 });
