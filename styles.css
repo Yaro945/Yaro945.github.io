@@ -186,3 +186,26 @@ img {
 img:hover {
   transform: scale(1.05);
 }
+
+.image-gallery {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.screenshot {
+  max-width: 300px; /* Set max width for responsive scaling */
+  height: auto;    /* Maintain aspect ratio */
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.small-video {
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
