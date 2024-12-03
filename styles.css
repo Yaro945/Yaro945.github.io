@@ -209,3 +209,13 @@ img:hover {
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.screenshot {
+  max-width: 100%; /* Ensures the image never exceeds the container width */
+  height: auto;    /* Maintains the aspect ratio */
+  border: 2px solid #ccc; /* Optional: Adds a border for styling */
+  border-radius: 5px; /* Optional: Smooth edges */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+  margin: 10px auto; /* Adds space around the images */
+  display: block; /* Centers the image if used in conjunction with auto margins */
+}
