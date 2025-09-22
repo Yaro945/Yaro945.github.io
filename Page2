@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Card Game</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: "Times New Roman", serif;
+      text-align: center;
+    }
+    .game-board {
+      display: grid;
+      grid-template-columns: repeat(5, 100px);
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .card {
+      width: 100px;
+      height: 150px;
+      background-color: white;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    a {
+      display: block;
+      margin-top: 20px;
+      color: lightblue;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Find the $10 Card!</h1>
+  <p>One card hides a $10 prize, the rest have vocabulary words from Unit 1 and 2.</p>
+
+  <div class="game-board" id="board"></div>
+
+  <button onclick="shuffleCards()">Shuffle Cards</button>
+
+  <a href="index.html">Back to Home</a>
+
+  <script>
+    const vocab = [
+      "Word1", "Word2", "Word3", "Word4", "Word5",
+      "Word6", "Word7", "Word8", "Word9", "Word10",
+      "Word11", "Word12", "Word13", "Word14", "Word15"
+    ];
+
+    function shuffleCards() {
+      const board = document.getElementById("board");
+      board.innerHTML = "";
+
+      // pick 9 random vocab words
+      let shuffledVocab = [...vocab].sort(() => 0.5 - Math.random()).slice(0, 9);
+
+      // insert $10 prize
+      shuffledVocab.push("$10 Prize");
+
+      // shuffle all 10 cards
+      shuffledVocab = shuffledVocab.sort(() => 0.5 - Math.random());
+
+      // create cards
+      shuffledVocab.forEach(word => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerText = word;
+        board.appendChild(card);
+      });
+    }
+
+    // Shuffle when page loads
+    shuffleCards();
+  </script>
+</body>
+</html>
