@@ -1,89 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Card Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards</title>
   <style>
     body {
-      background-color: black;
-      color: white;
-      font-family: "Times New Roman", serif;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       text-align: center;
+      padding: 20px;
     }
-    .game-board {
-      display: grid;
-      grid-template-columns: repeat(5, 100px);
-      gap: 15px;
-      justify-content: center;
-      margin-top: 20px;
+
+    h1 {
+      margin-bottom: 20px;
     }
+
     .card {
-      width: 100px;
-      height: 150px;
-      background-color: white;
-      color: black;
-      display: flex;
-      align-items: center;
+      width: 150px;
+      height: 100px;
+      margin: 10px;
+      display: inline-flex;
       justify-content: center;
-      cursor: pointer;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
+      align-items: center;
+      background-color: #3498db;
+      color: white;
+      font-size: 18px;
       border-radius: 8px;
       cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
     }
+
+    .card.flipped {
+      background-color: #2ecc71;
+      transform: rotateY(180deg);
+    }
+
     a {
       display: block;
-      margin-top: 20px;
-      color: lightblue;
+      margin-top: 30px;
       font-size: 18px;
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Find the $10 Card!</h1>
-  <p>One card hides a $10 prize, the rest have vocabulary words from Unit 1 and 2.</p>
+  <h1>Flashcards</h1>
 
-  <div class="game-board" id="board"></div>
+  <!-- Three cards for now -->
+  <div class="card">Card 1</div>
+  <div class="card">Card 2</div>
+  <div class="card">Card 3</div>
 
-  <button onclick="shuffleCards()">Shuffle Cards</button>
-
-  <a href="Main.html">Back to Home</a>
+  <p><a href="Main.html">⬅ Back to Home</a></p>
 
   <script>
-    const vocab = [
-      "Word1", "Word2", "Word3", "Word4", "Word5",
-      "Word6", "Word7", "Word8", "Word9", "Word10",
-      "Word11", "Word12", "Word13", "Word14", "Word15"
+    // Dictionary words (replace with your real Unit 1 & 2 words)
+    const words = [
+      "School", "Book", "Computer", 
+      "Friend", "Home", "Teacher", 
+      "Math", "Science", "Language"
     ];
 
-    function shuffleCards() {
-      const board = document.getElementById("board");
-      board.innerHTML = "";
+    const cards = document.querySelectorAll('.card');
 
-      // pick 9 random vocab words
-      let shuffledVocab = [...vocab].sort(() => 0.5 - Math.random()).slice(0, 9);
-
-      // insert $10 prize
-      shuffledVocab.push("$10 Prize");
-
-      // shuffle all 10 cards
-      shuffledVocab = shuffledVocab.sort(() => 0.5 - Math.random());
-
-      // create cards
-      shuffledVocab.forEach(word => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerText = word;
-        board.appendChild(card);
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        // Pick random word
+        const randomWord = words[Math.floor(Math.random() * words.length)];
+        // Flip the card + show the word
+        card.classList.toggle('flipped');
+        card.textContent = randomWord;
       });
-    }
-
-    // Shuffle when page loads
-    shuffleCards();
+    });
   </script>
 </body>
 </html>
