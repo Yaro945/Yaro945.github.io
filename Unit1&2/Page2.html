@@ -6,14 +6,37 @@
   <title>Flashcard Game</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: "Times New Roman", serif;
+      background-color: #111;
+      color: white;
+      margin: 0;
+      padding: 0;
       text-align: center;
+    }
+
+    header {
+      background: #222;
       padding: 20px;
     }
 
-    h1 {
-      margin-bottom: 10px;
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    nav {
+      margin: 15px 0;
+    }
+
+    nav a {
+      color: lightblue;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     #shuffleBtn {
@@ -36,6 +59,7 @@
       flex-wrap: wrap;
       justify-content: center;
       margin-top: 20px;
+      padding: 0 10px;
     }
 
     .card {
@@ -61,15 +85,33 @@
       color: #fff;
       font-size: 16px;
     }
+
+    footer {
+      background: #222;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #bbb;
+    }
   </style>
 </head>
 <body>
-  <h1>Flashcard Game</h1>
+  <header>
+    <h1>Flashcard Game</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="Page2.html">Flashcard Game</a>
+    </nav>
+  </header>
+
   <button id="shuffleBtn">Shuffle Cards</button>
   <div class="cards" id="cards"></div>
 
+  <footer>
+    © 2025 Yaroslav Kulabukhov. All Rights Reserved.
+  </footer>
+
   <script>
-    // Vocabulary Library
     const vocab = [
       // Unit 1
       { word: "Bit", desc: "Binary digit, 0 or 1" },
@@ -79,7 +121,6 @@
       { word: "Lossless", desc: "Compress without losing data" },
       { word: "Lossy", desc: "Compress, some data lost" },
       { word: "Metadata", desc: "Data about data" },
-
       // Unit 2
       { word: "Computing Device", desc: "Runs programs, e.g. computer" },
       { word: "Computer Network", desc: "Interconnected devices" },
@@ -109,9 +150,8 @@
     const shuffleBtn = document.getElementById("shuffleBtn");
 
     function shuffleCards() {
-      cardsContainer.innerHTML = ""; // Clear existing cards
+      cardsContainer.innerHTML = "";
 
-      // Pick 10 random vocab words
       const shuffled = vocab.sort(() => 0.5 - Math.random()).slice(0, 10);
 
       shuffled.forEach(item => {
@@ -135,7 +175,6 @@
 
     shuffleBtn.addEventListener("click", shuffleCards);
 
-    // Show cards on page load
     shuffleCards();
   </script>
 </body>
