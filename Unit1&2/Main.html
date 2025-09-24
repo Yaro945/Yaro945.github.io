@@ -3,39 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yaroslav Kulabukhov</title>
+  <title>Yaroslav Kulabukhov - Homepage</title>
   <style>
     body {
-      background-color: black;
+      background-color: #111;
       color: white;
       font-family: "Times New Roman", serif;
-      text-align: center;
       margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background: #222;
       padding: 20px;
     }
-    a {
-      color: lightblue;
-      font-size: 20px;
-      text-decoration: none;
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
     }
-    a:hover {
+
+    nav {
+      margin: 20px 0;
+    }
+
+    nav a {
+      color: lightblue;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    nav a:hover {
       text-decoration: underline;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background: #222;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #bbb;
     }
   </style>
 </head>
 <body>
-  <h1>Yaroslav Kulabukhov</h1>
-  
-  <section>
-    <h2>Future Goals</h2>
-    <p>I want to study computer science after high school.</p>
-  </section>
-  
+
+  <header>
+    <h1>Welcome to Yaroslav Kulabukhov’s Homepage</h1>
+    <nav>
+      <a href="Main.html">Home</a>
+      <a href="Page2.html">Flashcard Game</a>
+    </nav>
+  </header>
+
   <section>
     <h2>About Me</h2>
-    <p>A short description about yourself here.</p>
+    <p>
+      Hi, my name is Yaroslav Kulabukhov. I am interested in technology and computer science. 
+      I enjoy learning about data, networks, and how the internet works. 
+    </p>
   </section>
 
-  <p><a href="Page2.html">Play the Card Game</a></p>
+  <section>
+    <h2>Future Goals</h2>
+    <p>
+      After high school, I plan to study computer science and work on projects involving 
+      software development and new technologies. I want to build apps, websites, 
+      and games that help people.
+    </p>
+  </section>
+
+  <section>
+    <h2>Extras</h2>
+    <p>
+      You can play my interactive <a href="Page2.html">Flashcard Game</a> 
+      to test your knowledge of vocabulary.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Yaroslav Kulabukhov. All Rights Reserved.
+  </footer>
+
 </body>
 </html>

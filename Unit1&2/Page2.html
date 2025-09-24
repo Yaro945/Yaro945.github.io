@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flashcards</title>
+  <title>Flashcard Game</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,14 +13,36 @@
     }
 
     h1 {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+    }
+
+    #shuffleBtn {
+      padding: 10px 20px;
+      margin: 20px;
+      font-size: 16px;
+      background: #3498db;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #shuffleBtn:hover {
+      background: #2980b9;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
     }
 
     .card {
-      width: 150px;
-      height: 100px;
+      width: 180px;
+      height: 120px;
       margin: 10px;
-      display: inline-flex;
+      display: flex;
       justify-content: center;
       align-items: center;
       background-color: #3498db;
@@ -29,55 +51,92 @@
       border-radius: 8px;
       cursor: pointer;
       transition: transform 0.3s, background-color 0.3s;
+      text-align: center;
+      padding: 10px;
     }
 
     .card.flipped {
       background-color: #2ecc71;
       transform: rotateY(180deg);
-    }
-
-    a {
-      display: block;
-      margin-top: 30px;
-      font-size: 18px;
-      color: #3498db;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      color: #fff;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <h1>Flashcards</h1>
-
-  <!-- Three cards for now -->
-  <div class="card">Card 1</div>
-  <div class="card">Card 2</div>
-  <div class="card">Card 3</div>
-
-  <p><a href="Main.html">⬅ Back to Home</a></p>
+  <h1>Flashcard Game</h1>
+  <button id="shuffleBtn">Shuffle Cards</button>
+  <div class="cards" id="cards"></div>
 
   <script>
-    // Dictionary words (replace with your real Unit 1 & 2 words)
-    const words = [
-      "School", "Book", "Computer", 
-      "Friend", "Home", "Teacher", 
-      "Math", "Science", "Language"
+    // Vocabulary Library
+    const vocab = [
+      // Unit 1
+      { word: "Bit", desc: "Binary digit, 0 or 1" },
+      { word: "Byte", desc: "8 bits sequence" },
+      { word: "Roundoff", desc: "Error from limited bits" },
+      { word: "Analog Data", desc: "Smoothly changing values" },
+      { word: "Lossless", desc: "Compress without losing data" },
+      { word: "Lossy", desc: "Compress, some data lost" },
+      { word: "Metadata", desc: "Data about data" },
+
+      // Unit 2
+      { word: "Computing Device", desc: "Runs programs, e.g. computer" },
+      { word: "Computer Network", desc: "Interconnected devices" },
+      { word: "Path", desc: "Connections between devices" },
+      { word: "Protocol", desc: "Rules for communication" },
+      { word: "Fault Tolerant", desc: "Works even if parts fail" },
+      { word: "Scalability", desc: "Grows to meet demands" },
+      { word: "Bandwidth", desc: "Max transmission capacity" },
+      { word: "URL", desc: "Easy web address" },
+      { word: "Physical Network", desc: "Hardware connections" },
+      { word: "Internet Protocol (IP)", desc: "Assigns IP addresses" },
+      { word: "TCP", desc: "Reliable, ordered delivery" },
+      { word: "UDP", desc: "Fast but less reliable" },
+      { word: "Packets", desc: "Small chunks of data" },
+      { word: "Routers", desc: "Forward data on networks" },
+      { word: "DNS", desc: "Translates domains to IPs" },
+      { word: "HTTP", desc: "Transfers web pages" },
+      { word: "WWW", desc: "System of linked pages" },
+      { word: "Message Delivery", desc: "Packets take different paths" },
+      { word: "Redundancy", desc: "Multiple network paths" },
+      { word: "IP Addressing", desc: "Unique device addresses" },
+      { word: "IPv4", desc: "32-bit addresses" },
+      { word: "IPv6", desc: "128-bit addresses" }
     ];
 
-    const cards = document.querySelectorAll('.card');
+    const cardsContainer = document.getElementById("cards");
+    const shuffleBtn = document.getElementById("shuffleBtn");
 
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        // Pick random word
-        const randomWord = words[Math.floor(Math.random() * words.length)];
-        // Flip the card + show the word
-        card.classList.toggle('flipped');
-        card.textContent = randomWord;
+    function shuffleCards() {
+      cardsContainer.innerHTML = ""; // Clear existing cards
+
+      // Pick 10 random vocab words
+      const shuffled = vocab.sort(() => 0.5 - Math.random()).slice(0, 10);
+
+      shuffled.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.textContent = "Click to Flip";
+
+        card.addEventListener("click", () => {
+          if (!card.classList.contains("flipped")) {
+            card.classList.add("flipped");
+            card.textContent = item.word + ": " + item.desc;
+          } else {
+            card.classList.remove("flipped");
+            card.textContent = "Click to Flip";
+          }
+        });
+
+        cardsContainer.appendChild(card);
       });
-    });
+    }
+
+    shuffleBtn.addEventListener("click", shuffleCards);
+
+    // Show cards on page load
+    shuffleCards();
   </script>
 </body>
 </html>
